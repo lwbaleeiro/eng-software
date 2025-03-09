@@ -61,6 +61,7 @@ public class TwoSum {
     // space: O(n) - the space used by the map is proportional to the number of elements in the list
     public static int[] twoSum3(int[] nums, int target) {
         Map<Integer, Integer> numMap = new HashMap<>();
+
         for (int position = 0; position < nums.length; position++) {
 
             // currentNumber + x = target
