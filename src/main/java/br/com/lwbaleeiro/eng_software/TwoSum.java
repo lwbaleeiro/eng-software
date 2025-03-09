@@ -56,16 +56,26 @@ public class TwoSum {
     }
 
 
-    // One pass hash table
+    // Time & space complexity: 0(n)
+    // time: O(n) - we iterate through the list of numbers exactly once
+    // space: O(n) - the space used by the map is proportional to the number of elements in the list
     public static int[] twoSum3(int[] nums, int target) {
         Map<Integer, Integer> numMap = new HashMap<>();
+        for (int position = 0; position < nums.length; position++) {
 
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if (numMap.containsKey(complement)) {
-                return new int[]{numMap.get(complement), i};
+            // currentNumber + x = target
+            // x = target - currentNumber
+
+            int currentNumber = nums[position];
+            int x = target - currentNumber;
+
+            // If I have already seen x, then I have found the solution
+            if (numMap.containsKey(x)) {
+                return new int[] {numMap.get(x), position};
             }
-            numMap.put(nums[i], i);
+
+            // Otherwise, I store the current number in the map
+            numMap.put(currentNumber, position);
         }
 
         return new int[]{}; // No solution found
