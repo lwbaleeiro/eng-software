@@ -59,7 +59,8 @@ public class LongestCommonPrefix {
 
         // Percorre o restante do array
         for (int i = 1; i < strs.length; i++) while (
-                // Enquanto a primeira palavra do array não da 'match' com a palavra que ele esta percorrendo no momento...
+                // Para cada elemento restante do array (pulando o primeiro),
+                // enquanto as strings da primeira palavra do array não é igual à palavra que ele esta percorrendo no momento...
                 strs[i].indexOf(prefix) != 0
         ) {
             // É removido o ultimo character da primeira palavra do array e o programa continua...
