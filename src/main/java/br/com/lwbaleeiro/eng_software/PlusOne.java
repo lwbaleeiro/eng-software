@@ -30,15 +30,23 @@ public class PlusOne {
 
     // Best solution
     public static int[] plusOne(int[] digits) {
+        // Começa percorrendo pelo ultimo elemento do array
         for (int i = digits.length - 1; i >= 0; i--) {
+            // Caso o resultado do elemento atual + 1 seja diferente de 10
             if (digits[i] + 1 != 10) {
+                // Apenas soma 1 ao ultimo elemento e retorna o array
                 digits[i] += 1;
                 return digits;
             }
+
+            // Caso a soma de maior que 10, o elemento atual recebe 0
+            // Nesse caso o for continua para o proximo elemento do array
             digits[i] = 0;
         }
 
+        // Caso o primeiro elemento do array seja 9, é necessário criar um novo array
         int[] newDigits = new int[digits.length + 1];
+        // Nesse caso o primeiro elemento desse array ira receber 1
         newDigits[0] = 1;
         return newDigits;
     }
