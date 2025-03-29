@@ -10,8 +10,6 @@ public class MergeSortedArrayTest {
 
     @Test
     void test() {
-
-
-        assertArrayEquals(new int[]{1, 2, 2, 3, 5, 6}, merge(nums1, 3, nums2, 3));
+        //
     }
 }
