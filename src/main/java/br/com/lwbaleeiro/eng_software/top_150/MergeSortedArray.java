@@ -19,4 +19,15 @@ public class MergeSortedArray {
         // Sort the entire nums1 array using sort() function.
         Arrays.sort(nums1);
     }
+
+    // my solution
+    public static void mergeMy(int[] nums1, int m, int[] nums2, int n) {
+        int aux = m;
+        for (int i = 0; i < n; i++) {
+            nums1[aux] = nums2[i];
+            aux++;
+        }
+
+        Arrays.sort(nums1);
+    }
 }
