@@ -72,17 +72,32 @@ public class Rotate {
     }
 
     public static int[] rotate2(int[] nums, int k) {
+        // Ajusta o valor de k usando o operador módulo (k %= nums.length).
+        // Isso é importante porque se k for maior que o tamanho do array, estaríamos fazendo rotações desnecessárias,
+        // já que rotacionar um array de tamanho n por n posições resulta no mesmo array.
+
         k %= nums.length;
 
+        // Reverter o array inteiro
         reverse(nums, 0, nums.length - 1);
+        // Reverte os primeiros k elementos
         reverse(nums, 0, k - 1);
+        // Reverte os elementos restantes (antes do k até o final)
         reverse(nums, k, nums.length - 1);
 
         return nums;
     }
 
+    // É uma implementação simples do algoritmo de reversão de array,
+    // onde trocamos os elementos das extremidades e avançamos em direção ao centro.
     private static void reverse(int[] nums, int left, int right) {
         while (left < right) {
+
+            // Por que isso funciona? Podemos pensar da seguinte forma:
+            // Ao reverter o array tod0, movemos os elementos que precisam estar no início para o final, mas na ordem errada.
+            // Ao reverter os primeiros k elementos, corrigimos a ordem deles.
+            // Ao reverter os elementos restantes, corrigimos a ordem dos elementos originais.
+            // Por isso é chamada 3x.
             int temp = nums[left];
             nums[left] = nums[right];
             nums[right] = temp;
