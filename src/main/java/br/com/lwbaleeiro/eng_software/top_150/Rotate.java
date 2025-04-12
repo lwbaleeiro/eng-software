@@ -96,8 +96,7 @@ public class Rotate {
             // Por que isso funciona? Podemos pensar da seguinte forma:
             // Ao reverter o array tod0, movemos os elementos que precisam estar no início para o final, mas na ordem errada.
             // Ao reverter os primeiros k elementos, corrigimos a ordem deles.
-            // Ao reverter os elementos restantes, corrigimos a ordem dos elementos originais.
-            // Por isso é chamada 3x.
+            // E ao reverter os elementos restantes, corrigimos a ordem dos elementos originais. Por isso é chamada 3x.
             int temp = nums[left];
             nums[left] = nums[right];
             nums[right] = temp;
